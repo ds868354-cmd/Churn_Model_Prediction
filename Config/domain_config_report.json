@@ -1,0 +1,31 @@
+{
+  "model": {
+    "type": "TABULAR_ML",
+    "task": "classification",
+    "target_col": "class"
+  },
+  "industry": {
+    "applied": "telecom",
+    "confidence": null,
+    "detected": true,
+    "evidence": [],
+    "active_domains": [
+      "healthcare",
+      "finance",
+      "real_estate",
+      "hr",
+      "telecom"
+    ]
+  },
+  "sensitive_columns_found": {
+    "phone_number": [
+      "direct_identifier"
+    ]
+  },
+  "sensitive_columns_dropped": [
+    "phone_number"
+  ],
+  "target_bounds": null,
+  "language": null,
+  "applied_domain_config_file": "/content/domain_config.yaml"
+}

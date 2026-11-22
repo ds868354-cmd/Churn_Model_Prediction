@@ -1,0 +1,29 @@
+description: 'Generated for THIS dataset by Final_universal_automl_pipeline fixed-161
+  (column names only, no values). Not read automatically: rename it to domain_config.yaml
+  to reuse it; the `dataset:` block makes a run on a different dataset ignore it.
+  Findings: domain_config_report.json.'
+dataset:
+  n_columns: 15
+  columns_sha256: 604e71b30689f4ab55f4aa846bbdeb185038e28665a2f283afc66aca03183865
+  columns:
+  - class
+  - international_plan
+  - number_customer_service_calls
+  - number_customer_service_calls__log1p
+  - phone_number
+  - state
+  - total_day_calls
+  - total_day_minutes
+  - total_eve_calls
+  - total_eve_minutes
+  - total_intl_calls
+  - total_intl_calls__log1p
+  - total_intl_minutes
+  - total_night_minutes
+  - voice_mail_plan
+domain:
+  industry: telecom
+  auto_drop_sensitive: true
+  keep_sensitive_columns: []
+  extra_sensitive_columns:
+  - phone_number

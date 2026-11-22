@@ -1,0 +1,50 @@
+{
+  "name": "Classic Telecom Churn Dataset",
+  "industry": "telecom",
+  "industry_source": "explicit (--industry / config)",
+  "model_type": "TABULAR_ML",
+  "task": "classification",
+  "source_url": "https://www.google.com/url?sa=i&source=web&rct=j&url=https://www.openml.org/search?type%3Ddata%26id%3D40701&ved=2ahUKEwivhP7wgpmYAxWtSWwGHROwHHMQy_kOegYIAggTEAM&opi=89978449&cd&psig=AOvVaw28I4plcmLIokhISip6fzdW&ust=1795349143931000",
+  "license": "CC-BY-4.0",
+  "collection_method": "Churned customers (minority class) ki sankhya non-churned customers ke muqable kaafi kam (~14%) hai, jisse model prediction mein bias aa sakta hai.",
+  "known_limitations": "Yes. This is a fully labelled dataset designed for supervised binary classification. The target column Churn indicates whether a customer left the service (Yes / 1) or remained active (No / 0).",
+  "complete": true,
+  "missing_fields": [],
+  "defaulted_fields": [],
+  "field_sources": {
+    "source_url": "cli",
+    "license": "cli",
+    "collection_method": "cli",
+    "known_limitations": "cli"
+  },
+  "needs_owner_confirmation": false,
+  "metadata_file": null,
+  "n_rows_used": 5000,
+  "n_test_rows": 1001,
+  "class_distribution": {
+    "0.0": 4293,
+    "1.0": 707
+  },
+  "dropped_columns": {
+    "phone_number": "protected attribute dropped by DROP_SENSITIVE_FEATURES"
+  },
+  "audit_findings": [
+    "class '0.0' holds 85.9% of the rows -- accuracy is misleading; judge by macro-F1 and per-class recall.",
+    "protected attribute column(s) ['phone_number'] were dropped before training (DROP_SENSITIVE_FEATURES) -- no fairness audit was run for them."
+  ],
+  "sensitive_features": [],
+  "sensitive_reviewed": {},
+  "sensitive_scan": {},
+  "sensitive_review_source": {},
+  "business_justified": {},
+  "sensitive_features_dropped": [
+    "phone_number"
+  ],
+  "fairness_disparity": [],
+  "fairness_check_status": "NOT_APPLICABLE",
+  "fairness_review_pending": [],
+  "dropped_columns_category": {
+    "phone_number": "protected_class"
+  },
+  "unspecified_fields": []
+}

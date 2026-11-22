@@ -1,0 +1,419 @@
+{
+  "target_col": "class",
+  "task": "classification",
+  "model_family": "TABULAR_ML",
+  "numeric_cols": [
+    "state",
+    "international_plan",
+    "voice_mail_plan",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_night_minutes",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "number_customer_service_calls",
+    "total_intl_calls__log1p",
+    "number_customer_service_calls__log1p"
+  ],
+  "categorical_cols": [],
+  "feature_names": [
+    "state",
+    "international_plan",
+    "voice_mail_plan",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_night_minutes",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "number_customer_service_calls",
+    "total_intl_calls__log1p",
+    "number_customer_service_calls__log1p"
+  ],
+  "class_names": null,
+  "impute_medians": [
+    25.0,
+    0.0,
+    0.0,
+    179.9499969482422,
+    100.0,
+    201.5500030517578,
+    100.0,
+    199.5,
+    10.300000190734863,
+    4.0,
+    1.0,
+    1.6094379124341003,
+    0.6931471805599453
+  ],
+  "outlier_bounds": [
+    {
+      "lower": 0.0,
+      "upper": 50.0
+    },
+    {
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "lower": 0.0,
+      "upper": 432.7249641418457
+    },
+    {
+      "lower": 6.0,
+      "upper": 195.0
+    },
+    {
+      "lower": 0.0,
+      "upper": 436.92501068115234
+    },
+    {
+      "lower": 9.0,
+      "upper": 191.0
+    },
+    {
+      "lower": 23.200000762939453,
+      "upper": 438.3000030517578
+    },
+    {
+      "lower": 0.0,
+      "upper": 22.600000381469727
+    },
+    {
+      "lower": 0.0,
+      "upper": 17.751000000000204
+    },
+    {
+      "lower": 0.0,
+      "upper": 7.0
+    },
+    {
+      "lower": 0.0,
+      "upper": 3.6247575128615814
+    },
+    {
+      "lower": 0.0,
+      "upper": 2.315007612992603
+    }
+  ],
+  "scale_recipe": {
+    "method": "standard",
+    "mean_": [
+      25.78246153846154,
+      0.09753846153846153,
+      0.26461538461538464,
+      180.5707384223938,
+      100.09784615384615,
+      201.0752922468919,
+      99.90184615384615,
+      200.2613229698768,
+      10.294369236515118,
+      4.4929243076923076,
+      1.5806153846153845,
+      1.6074801034966455,
+      0.8215645553767218
+    ],
+    "scale_": [
+      14.819417618658745,
+      0.2966895853567687,
+      0.4411281932049252,
+      54.06773644351523,
+      19.920139672997202,
+      50.48226092741145,
+      19.951893597605658,
+      50.454496517660296,
+      2.767576389667292,
+      2.4952689567616426,
+      1.2960744006695875,
+      0.4428163965488998,
+      0.514428802090854
+    ]
+  },
+  "encode_recipe": {
+    "categorical_cols": [],
+    "encoders": {}
+  },
+  "custom_formulas": null,
+  "smote_applied": false,
+  "applied_pipeline_steps": [
+    {
+      "step": "FeatureExpansion",
+      "params": {
+        "derived_columns": [
+          "total_intl_calls__log1p",
+          "number_customer_service_calls__log1p"
+        ],
+        "onehot_columns": []
+      }
+    },
+    {
+      "step": "Imputation",
+      "params": {
+        "method": "median",
+        "columns": [
+          "state",
+          "international_plan",
+          "voice_mail_plan",
+          "total_day_minutes",
+          "total_day_calls",
+          "total_eve_minutes",
+          "total_eve_calls",
+          "total_night_minutes",
+          "total_intl_minutes",
+          "total_intl_calls",
+          "number_customer_service_calls",
+          "total_intl_calls__log1p",
+          "number_customer_service_calls__log1p"
+        ],
+        "medians": [
+          25.0,
+          0.0,
+          0.0,
+          179.9499969482422,
+          100.0,
+          201.5500030517578,
+          100.0,
+          199.5,
+          10.300000190734863,
+          4.0,
+          1.0,
+          1.6094379124341003,
+          0.6931471805599453
+        ]
+      }
+    },
+    {
+      "step": "WinsorizeCaps",
+      "params": {
+        "factor": 3.0,
+        "bounds": [
+          {
+            "lower": 0.0,
+            "upper": 50.0
+          },
+          {
+            "lower": 0.0,
+            "upper": 1.0
+          },
+          {
+            "lower": 0.0,
+            "upper": 1.0
+          },
+          {
+            "lower": 0.0,
+            "upper": 432.7249641418457
+          },
+          {
+            "lower": 6.0,
+            "upper": 195.0
+          },
+          {
+            "lower": 0.0,
+            "upper": 436.92501068115234
+          },
+          {
+            "lower": 9.0,
+            "upper": 191.0
+          },
+          {
+            "lower": 23.200000762939453,
+            "upper": 438.3000030517578
+          },
+          {
+            "lower": 0.0,
+            "upper": 22.600000381469727
+          },
+          {
+            "lower": 0.0,
+            "upper": 17.751000000000204
+          },
+          {
+            "lower": 0.0,
+            "upper": 7.0
+          },
+          {
+            "lower": 0.0,
+            "upper": 3.6247575128615814
+          },
+          {
+            "lower": 0.0,
+            "upper": 2.315007612992603
+          }
+        ]
+      }
+    },
+    {
+      "step": "Scaling",
+      "params": {
+        "method": "standard"
+      }
+    }
+  ],
+  "derived_features": [
+    {
+      "type": "log1p",
+      "source": "total_intl_calls",
+      "out": "total_intl_calls__log1p"
+    },
+    {
+      "type": "log1p",
+      "source": "number_customer_service_calls",
+      "out": "number_customer_service_calls__log1p"
+    }
+  ],
+  "feature_expansion_report": {
+    "numeric": [
+      {
+        "col": "state",
+        "variance": 219.615139,
+        "skew": -0.029097,
+        "min": 0.0,
+        "n_unique": 51,
+        "abs_corr": 0.011743,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "international_plan",
+        "variance": 0.088025,
+        "skew": 2.713014,
+        "min": 0.0,
+        "n_unique": 2,
+        "abs_corr": 0.262212,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "voice_mail_plan",
+        "variance": 0.194594,
+        "skew": 1.067194,
+        "min": 0.0,
+        "n_unique": 2,
+        "abs_corr": 0.121509,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_day_minutes",
+        "variance": 2923.320124,
+        "skew": 0.017759,
+        "min": 0.0,
+        "n_unique": 1649,
+        "abs_corr": 0.170065,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_day_calls",
+        "variance": 397.170476,
+        "skew": -0.086665,
+        "min": 0.0,
+        "n_unique": 119,
+        "abs_corr": 0.034333,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_eve_minutes",
+        "variance": 2548.458668,
+        "skew": -0.005784,
+        "min": 0.0,
+        "n_unique": 1601,
+        "abs_corr": 0.068632,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_eve_calls",
+        "variance": 398.60643,
+        "skew": -0.081039,
+        "min": 0.0,
+        "n_unique": 122,
+        "abs_corr": 0.00926,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_night_minutes",
+        "variance": 2545.656219,
+        "skew": 0.070616,
+        "min": 23.200001,
+        "n_unique": 1560,
+        "abs_corr": 0.047294,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_intl_minutes",
+        "variance": 7.659479,
+        "skew": -0.196258,
+        "min": 0.0,
+        "n_unique": 163,
+        "abs_corr": 0.05805,
+        "log1p_candidate": false,
+        "high_impact": false
+      },
+      {
+        "col": "total_intl_calls",
+        "variance": 6.252424,
+        "skew": 1.404823,
+        "min": 0.0,
+        "n_unique": 20,
+        "abs_corr": 0.068408,
+        "log1p_candidate": true,
+        "high_impact": true
+      },
+      {
+        "col": "number_customer_service_calls",
+        "variance": 1.699251,
+        "skew": 1.035962,
+        "min": 0.0,
+        "n_unique": 10,
+        "abs_corr": 0.136958,
+        "log1p_candidate": true,
+        "high_impact": true
+      }
+    ],
+    "log1p_columns": [
+      "total_intl_calls",
+      "number_customer_service_calls"
+    ],
+    "high_impact_numeric": [
+      "number_customer_service_calls",
+      "total_intl_calls"
+    ],
+    "ordinal_columns": [],
+    "target_encoded_columns": [],
+    "frequency_encoded_columns": [],
+    "onehot_columns": [],
+    "skipped_columns": []
+  },
+  "robust_objective": {
+    "enabled": true,
+    "task": "classification",
+    "imbalance_ratio": 6.0652,
+    "objective": "focal_loss",
+    "focal_gamma": 2.0,
+    "focal_alpha": 0.8585
+  },
+  "ingestion_mode_context": "json_array",
+  "log_transform_target": false,
+  "log_target_pad_frac": 0.0,
+  "weighted_least_squares": {
+    "applied": false,
+    "reason": "not a regression task or weighted_least_squares=False"
+  },
+  "decision_threshold": {
+    "threshold": 0.49,
+    "positive_index": 1,
+    "positive_class": 1.0,
+    "source": "tabular_ml_settings.decision_threshold"
+  }
+}

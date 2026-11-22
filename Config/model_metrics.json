@@ -1,0 +1,32 @@
+{
+  "best_model_name": "lightgbm",
+  "generator_version": "fixed-162",
+  "metrics": {
+    "accuracy": 0.9590409590409591,
+    "accuracy_error_reduction": 0.7092198581560287,
+    "accuracy_lift_vs_baseline": 0.0999,
+    "baseline_accuracy": 0.8591408591408591,
+    "baseline_f1_macro": 0.46211714132187,
+    "baseline_headline_value": 0.46211714132187,
+    "decision_threshold_positive_class": 1.0,
+    "decision_threshold_precision": 0.8787878787878788,
+    "decision_threshold_recall": 0.8226950354609929,
+    "decision_threshold_threshold": 0.49,
+    "f1_macro_lift_vs_baseline": 0.45093471909841154,
+    "f1_macro_skill": 0.8383511610810629,
+    "f1_positive": 0.8498168498168498,
+    "f1_weighted": 0.9584724124920772,
+    "headline_metric_value": 0.9130518604202815,
+    "majority_baseline_accuracy": 0.859141,
+    "min_class_recall": 0.8227,
+    "n_classes_below_recall_0_70": 0.0,
+    "precision_positive": 0.8787878787878788,
+    "recall_positive": 0.8226950354609929,
+    "roc_auc": 0.9441530595414811,
+    "skill_over_block_floor": 0.7883511610810628
+  },
+  "model_type": "TABULAR_ML",
+  "n_test": 1001,
+  "schema": 1,
+  "task": "classification"
+}
